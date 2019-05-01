@@ -3,6 +3,8 @@ package View;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+import Controller.HorarioController;
+
 public class App {
 
 	@SuppressWarnings({ "unused", "resource" })
@@ -10,6 +12,7 @@ public class App {
 		// TODO Auto-generated method stub
 		Scanner leitor=new Scanner(System.in);
 		Popup popup=new Popup();
+		HorarioController hcl=new HorarioController();
 		
 		int tempo;
 		
@@ -26,7 +29,14 @@ public class App {
 		
 		popup.acao();
 		
+		System.out.println("Hora:");
+		int hrs=leitor.nextInt();
+		System.out.println("Min:");
+		int min=leitor.nextInt();
+		System.out.println("Seg:");
+		int seg=leitor.nextInt();
 		
+		hcl.iniciarExecucaoEm(hrs, min, seg);
 
 	}
 
